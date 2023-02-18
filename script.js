@@ -12,6 +12,12 @@ window.addEventListener('load', function(){
     // playRound(playerSelection, computerSelection)
     function playRound(playerSelection, computerSelection) {
         // TODO
+        // Ask for user input and convert to lowercase
+        // If playerSelection equals computerSelection, then it's a tie
+        // If playerSelection is rock and computerSelection is paper, computer wins, else player wins
+        // If playerSelection is paper and computerSelection is scissors, computer wins, else player wins
+        // If playerSelection is scissors and computerSelection is rock, computer wins, else player wins
+        
     }
 
     // game()
