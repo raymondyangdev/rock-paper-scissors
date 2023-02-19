@@ -26,6 +26,8 @@ window.addEventListener('load', function(){
         // Play round five times
         // Keep track of player and computer scores
         // Determine winner at the end of five rounds
-        playRound(playerSelection, computerSelection)
+        for (let round = 0; round < 5; round++) {
+            playRound(playerSelection, computerSelection)
+        }
     }
 })
