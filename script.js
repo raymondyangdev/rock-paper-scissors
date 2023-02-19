@@ -36,6 +36,15 @@ window.addEventListener('load', function () {
             .toLowerCase()} beats ${computerSelection}.`;
     }
 
+    // Determine the winner of the game
+    function determineGameWinner(playerScore, computerScore) {
+        if (playerScore > computerScore) {
+            return `You win the game with a score of ${playerScore}!`;
+        } else {
+            return `You lost! The computer won with a score of ${computerScore}`;
+        }
+    }
+
     // playRound(playerSelection, computerSelection)
     function playRound(playerSelection, computerSelection) {
         if (playerSelection.toLowerCase() === computerSelection) {
@@ -68,6 +77,10 @@ window.addEventListener('load', function () {
         // Determine winner at the end of five rounds
         for (let round = 0; round < 5; round++) {
             playRound(playerSelection, getComputerChoice());
+
+            if (round === 4) {
+                determineGameWinner(playerScore, computerScore);
+            }
         }
     }
 });
