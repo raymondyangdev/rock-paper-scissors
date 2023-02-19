@@ -8,6 +8,12 @@ window.addEventListener('load', function () {
         return computerChoice;
     }
 
+    // Declare player score and computer score in global scope to keep track of score
+    let computerScore = 0;
+    let playerScore = 0;
+
+    // Prints the result of the round to the console when the player loses
+    // Increases the computer's score by 1
     function playerLoses(playerSelection, computerSelection) {
         console.log(
             `You lose! ${computerSelection
@@ -16,8 +22,12 @@ window.addEventListener('load', function () {
                 1
             )} beats ${playerSelection.toLowerCase()}.`
         );
+
+        computerScore++;
     }
 
+    // Prints the result of the round to the console when the player wins
+    // Increases the player's score by 1
     function playerWins(playerSelection, computerSelection) {
         console.log(
             `You win! ${playerSelection
@@ -26,17 +36,12 @@ window.addEventListener('load', function () {
                 .slice(1)
                 .toLowerCase()} beats ${computerSelection}.`
         );
+
+        playerScore++;
     }
 
     // playRound(playerSelection, computerSelection)
     function playRound(playerSelection, computerSelection) {
-        // TODO
-        // Ask for user input and convert to lowercase
-        // If playerSelection equals computerSelection, then it's a tie
-        // If playerSelection is rock and computerSelection is paper, computer wins, else player wins
-        // If playerSelection is paper and computerSelection is scissors, computer wins, else player wins
-        // If playerSelection is scissors and computerSelection is rock, computer wins, else player wins
-
         if (playerSelection.toLowerCase() === computerSelection) {
             console.log(`It's a tie!`);
         } else if (
@@ -58,8 +63,6 @@ window.addEventListener('load', function () {
             playerWins(playerSelection, computerSelection);
         }
     }
-
-    playRound('rock', 'scissors');
 
     // game()
     function game() {
