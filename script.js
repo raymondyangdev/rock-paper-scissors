@@ -17,12 +17,15 @@ window.addEventListener('load', function(){
         // If playerSelection is rock and computerSelection is paper, computer wins, else player wins
         // If playerSelection is paper and computerSelection is scissors, computer wins, else player wins
         // If playerSelection is scissors and computerSelection is rock, computer wins, else player wins
-        
+
     }
 
     // game()
     function game() {
         // TODO
+        // Play round five times
+        // Keep track of player and computer scores
+        // Determine winner at the end of five rounds
         playRound(playerSelection, computerSelection)
     }
 })
