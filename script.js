@@ -15,35 +15,31 @@ window.addEventListener('load', function () {
     // Prints the result of the round to the console when the player loses
     // Increases the computer's score by 1
     function playerLoses(playerSelection, computerSelection) {
-        console.log(
-            `You lose! ${computerSelection
-                .charAt(0)
-                .toUpperCase()}${computerSelection.slice(
-                1
-            )} beats ${playerSelection.toLowerCase()}.`
-        );
-
         computerScore++;
+
+        return `You lose! ${computerSelection
+            .charAt(0)
+            .toUpperCase()}${computerSelection.slice(
+            1
+        )} beats ${playerSelection.toLowerCase()}.`;
     }
 
     // Prints the result of the round to the console when the player wins
     // Increases the player's score by 1
     function playerWins(playerSelection, computerSelection) {
-        console.log(
-            `You win! ${playerSelection
-                .charAt(0)
-                .toUpperCase()}${playerSelection
-                .slice(1)
-                .toLowerCase()} beats ${computerSelection}.`
-        );
-
         playerScore++;
+
+        return `You win! ${playerSelection
+            .charAt(0)
+            .toUpperCase()}${playerSelection
+            .slice(1)
+            .toLowerCase()} beats ${computerSelection}.`;
     }
 
     // playRound(playerSelection, computerSelection)
     function playRound(playerSelection, computerSelection) {
         if (playerSelection.toLowerCase() === computerSelection) {
-            console.log(`It's a tie!`);
+            return `It's a tie!`;
         } else if (
             playerSelection.toLowerCase() === 'rock' &&
             computerSelection === 'paper'
