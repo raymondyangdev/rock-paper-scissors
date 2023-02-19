@@ -45,7 +45,8 @@ window.addEventListener('load', function () {
         }
     }
 
-    // playRound(playerSelection, computerSelection)
+    // Starts a round of rock, paper, scissors
+    // Determine whether it's a tie, a win for the player or the computer based on standard rules
     function playRound(playerSelection, computerSelection) {
         if (playerSelection.toLowerCase() === computerSelection) {
             return `It's a tie!`;
@@ -69,13 +70,12 @@ window.addEventListener('load', function () {
         }
     }
 
-    // game()
+    // Starts game
     function game() {
-        // TODO
         // Play round five times
-        // Keep track of player and computer scores
         // Determine winner at the end of five rounds
         for (let round = 0; round < 5; round++) {
+            let playerSelection = prompt();
             playRound(playerSelection, getComputerChoice());
 
             if (round === 4) {
