@@ -18,26 +18,52 @@ window.addEventListener('load', function () {
         // If playerSelection is scissors and computerSelection is rock, computer wins, else player wins
 
         if (playerSelection.toLowerCase() === computerSelection) {
-            console.log(`It's a tie`);
+            console.log(`It's a tie!`);
         } else if (
             playerSelection.toLowerCase() === 'rock' &&
             computerSelection === 'paper'
         ) {
-            console.log('Computer wins');
+            console.log(
+                `You lose! ${computerSelection
+                    .charAt(0)
+                    .toUpperCase()}${computerSelection.slice(
+                    1
+                )} beats ${playerSelection.toLowerCase()}.`
+            );
         } else if (
             playerSelection.toLowerCase() === 'paper' &&
             computerSelection === 'scissors'
         ) {
-            console.log('Computer wins');
+            console.log(
+                `You lose! ${computerSelection
+                    .charAt(0)
+                    .toUpperCase()}${computerSelection.slice(
+                    1
+                )} beats ${playerSelection.toLowerCase()}.`
+            );
         } else if (
             playerSelection.toLowerCase() === 'scissors' &&
             computerSelection === 'rock'
         ) {
-            console.log('Computer wins');
+            console.log(
+                `You lose! ${computerSelection
+                    .charAt(0)
+                    .toUpperCase()}${computerSelection.slice(
+                    1
+                )} beats ${playerSelection.toLowerCase()}.`
+            );
         } else {
-            console.log(`Player wins`);
+            console.log(
+                `You win! ${playerSelection
+                    .charAt(0)
+                    .toUpperCase()}${playerSelection
+                    .slice(1)
+                    .toLowerCase()} beats ${computerSelection}.`
+            );
         }
     }
+
+    playRound('rock', 'scissors');
 
     // game()
     function game() {
