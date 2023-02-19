@@ -8,6 +8,26 @@ window.addEventListener('load', function () {
         return computerChoice;
     }
 
+    function playerLoses(playerSelection, computerSelection) {
+        console.log(
+            `You lose! ${computerSelection
+                .charAt(0)
+                .toUpperCase()}${computerSelection.slice(
+                1
+            )} beats ${playerSelection.toLowerCase()}.`
+        );
+    }
+
+    function playerWins(playerSelection, computerSelection) {
+        console.log(
+            `You win! ${playerSelection
+                .charAt(0)
+                .toUpperCase()}${playerSelection
+                .slice(1)
+                .toLowerCase()} beats ${computerSelection}.`
+        );
+    }
+
     // playRound(playerSelection, computerSelection)
     function playRound(playerSelection, computerSelection) {
         // TODO
@@ -23,43 +43,19 @@ window.addEventListener('load', function () {
             playerSelection.toLowerCase() === 'rock' &&
             computerSelection === 'paper'
         ) {
-            console.log(
-                `You lose! ${computerSelection
-                    .charAt(0)
-                    .toUpperCase()}${computerSelection.slice(
-                    1
-                )} beats ${playerSelection.toLowerCase()}.`
-            );
+            playerLoses(playerSelection, computerSelection);
         } else if (
             playerSelection.toLowerCase() === 'paper' &&
             computerSelection === 'scissors'
         ) {
-            console.log(
-                `You lose! ${computerSelection
-                    .charAt(0)
-                    .toUpperCase()}${computerSelection.slice(
-                    1
-                )} beats ${playerSelection.toLowerCase()}.`
-            );
+            playerLoses(playerSelection, computerSelection);
         } else if (
             playerSelection.toLowerCase() === 'scissors' &&
             computerSelection === 'rock'
         ) {
-            console.log(
-                `You lose! ${computerSelection
-                    .charAt(0)
-                    .toUpperCase()}${computerSelection.slice(
-                    1
-                )} beats ${playerSelection.toLowerCase()}.`
-            );
+            playerLoses(playerSelection, computerSelection);
         } else {
-            console.log(
-                `You win! ${playerSelection
-                    .charAt(0)
-                    .toUpperCase()}${playerSelection
-                    .slice(1)
-                    .toLowerCase()} beats ${computerSelection}.`
-            );
+            playerWins(playerSelection, computerSelection);
         }
     }
 
@@ -72,7 +68,7 @@ window.addEventListener('load', function () {
         // Keep track of player and computer scores
         // Determine winner at the end of five rounds
         for (let round = 0; round < 5; round++) {
-            playRound(playerSelection, computerSelection);
+            playRound(playerSelection, getComputerChoice());
         }
     }
 });
