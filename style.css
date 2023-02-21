@@ -12,12 +12,10 @@ body {
     background-color: #457B9D;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 36px;
-    overflow: auto;
-    flex: 1;
+a {
+    text-decoration: none;
+    color: #A8DADC;
+    margin: 0 10px;
 }
 
 nav {
@@ -28,3 +26,26 @@ nav {
     background-color: #1d3557;
     color: #f1faee;
 }
+
+footer {
+    height: 72px;
+    color: #F1FAEE;
+    background-color: #1D3557;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#heart {
+    color: #E63946;
+    margin: 0 10px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 36px;
+    overflow: auto;
+    flex: 1;
+}
+
