@@ -18,6 +18,10 @@ a {
     margin: 0 10px;
 }
 
+a:hover {
+    color: #F1FAEE;
+}
+
 nav {
     display: flex;
     justify-content: center;
