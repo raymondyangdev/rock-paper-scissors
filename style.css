@@ -22,6 +22,16 @@ a:hover {
     color: #F1FAEE;
 }
 
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    
+}
+
 nav {
     display: flex;
     justify-content: center;
@@ -53,3 +63,13 @@ footer {
     flex: 1;
 }
 
+/* Game */
+.game-options {
+    display: flex;
+    gap: 48px;
+}
+
+img.selections {
+    height: auto;
+    width: 200px;
+} 
