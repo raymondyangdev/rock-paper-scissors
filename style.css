@@ -60,6 +60,11 @@ footer {
 }
 
 /* Game */
+.game-result {
+    display: flex;
+    justify-content: center;
+}
+
 .game-score {
     display: flex;
     justify-content: center;

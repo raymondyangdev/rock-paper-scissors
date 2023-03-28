@@ -20,8 +20,8 @@ window.addEventListener('load', function () {
         return `You lose! ${computerSelection
             .charAt(0)
             .toUpperCase()}${computerSelection.slice(
-            1
-        )} beats ${playerSelection.toLowerCase()}.`;
+                1
+            )} beats ${playerSelection.toLowerCase()}.`;
     }
 
     // Prints the result of the round to the console when the player wins
@@ -32,8 +32,8 @@ window.addEventListener('load', function () {
         return `You win! ${playerSelection
             .charAt(0)
             .toUpperCase()}${playerSelection
-            .slice(1)
-            .toLowerCase()} beats ${computerSelection}.`;
+                .slice(1)
+                .toLowerCase()} beats ${computerSelection}.`;
     }
 
     // Determine the winner of the game
@@ -41,7 +41,7 @@ window.addEventListener('load', function () {
         if (playerScore > computerScore) {
             return `You win the game with a score of ${playerScore}!`;
         } else {
-            return `You lost! The computer won with a score of ${computerScore}`;
+            return `You lost! The computer won with a score of ${computerScore}!`;
         }
     }
 
@@ -54,33 +54,53 @@ window.addEventListener('load', function () {
             playerSelection.toLowerCase() === 'rock' &&
             computerSelection === 'paper'
         ) {
-            playerLoses(playerSelection, computerSelection);
+            return playerLoses(playerSelection, computerSelection);
         } else if (
             playerSelection.toLowerCase() === 'paper' &&
             computerSelection === 'scissors'
         ) {
-            playerLoses(playerSelection, computerSelection);
+            return playerLoses(playerSelection, computerSelection);
         } else if (
             playerSelection.toLowerCase() === 'scissors' &&
             computerSelection === 'rock'
         ) {
-            playerLoses(playerSelection, computerSelection);
+            return playerLoses(playerSelection, computerSelection);
         } else {
-            playerWins(playerSelection, computerSelection);
+            return playerWins(playerSelection, computerSelection);
         }
     }
 
     // Starts game
     function game() {
-        // Play round five times
-        // Determine winner at the end of five rounds
-        for (let round = 0; round < 5; round++) {
-            let playerSelection = prompt();
-            playRound(playerSelection, getComputerChoice());
+        document.querySelector('.rock').addEventListener('click', function () {
+            const gameResult = playRound('rock', getComputerChoice());
+            printResults(gameResult);
+        })
 
-            if (round === 4) {
-                determineGameWinner(playerScore, computerScore);
-            }
+        document.querySelector('.paper').addEventListener('click', function () {
+            const gameResult = playRound('paper', getComputerChoice());
+            printResults(gameResult);
+        })
+
+        document.querySelector('.scissors').addEventListener('click', function () {
+            const gameResult = playRound('scissors', getComputerChoice());
+            printResults(gameResult);
+        })
+
+    }
+
+    function printResults(result) {
+        const gameResult = document.querySelector('.game-result');
+        gameResult.innerHTML = result;
+        document.querySelector('div.player-result span.result').innerHTML = playerScore;
+        document.querySelector('div.computer-result span.result').innerHTML = computerScore;
+
+        if (playerScore === 5 || computerScore === 5) {
+            const gameWinner = determineGameWinner(playerScore, computerScore);
+            gameResult.innerHTML = gameWinner;
         }
     }
+
+    game();
+
 });
