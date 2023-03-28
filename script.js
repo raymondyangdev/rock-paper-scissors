@@ -98,6 +98,8 @@ window.addEventListener('load', function () {
         if (playerScore === 5 || computerScore === 5) {
             const gameWinner = determineGameWinner(playerScore, computerScore);
             gameResult.innerHTML = gameWinner;
+            playerScore = 0;
+            computerScore = 0;
         }
     }
 
