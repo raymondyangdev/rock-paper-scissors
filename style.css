@@ -28,10 +28,6 @@ button {
     cursor: pointer;
 }
 
-button:hover {
-    
-}
-
 nav {
     display: flex;
     justify-content: center;
@@ -64,6 +60,12 @@ footer {
 }
 
 /* Game */
+.game-score {
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+}
+
 .game-options {
     display: flex;
     gap: 48px;
