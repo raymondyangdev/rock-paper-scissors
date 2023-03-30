@@ -90,10 +90,10 @@ window.addEventListener('load', function () {
     }
 
     function printResults(result) {
-        const gameResult = document.querySelector('.game-result');
+        const gameResult = document.querySelector('.game-info');
         gameResult.innerHTML = result;
-        document.querySelector('div.player-result span.result').innerHTML = playerScore;
-        document.querySelector('div.computer-result span.result').innerHTML = computerScore;
+        document.querySelector('#player-score').innerHTML = playerScore;
+        document.querySelector('#computer-score').innerHTML = computerScore;
 
         if (playerScore === 5 || computerScore === 5) {
             const gameWinner = determineGameWinner(playerScore, computerScore);
