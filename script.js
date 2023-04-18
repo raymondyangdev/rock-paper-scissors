@@ -73,17 +73,23 @@ window.addEventListener('load', function () {
     // Starts game
     function game() {
         document.querySelector('.rock').addEventListener('click', function () {
-            const gameResult = playRound('rock', getComputerChoice());
+            const computerSelection = getComputerChoice();
+            const gameResult = playRound('rock', computerSelection);
+            setSelectionImg('rock', computerSelection);
             printResults(gameResult);
         })
 
         document.querySelector('.paper').addEventListener('click', function () {
-            const gameResult = playRound('paper', getComputerChoice());
+            const computerSelection = getComputerChoice();
+            const gameResult = playRound('paper', computerSelection);
+            setSelectionImg('paper', computerSelection);
             printResults(gameResult);
         })
 
         document.querySelector('.scissors').addEventListener('click', function () {
-            const gameResult = playRound('scissors', getComputerChoice());
+            const computerSelection = getComputerChoice();
+            const gameResult = playRound('scissors', computerSelection);
+            setSelectionImg('scissors', computerSelection);
             printResults(gameResult);
         })
 
@@ -101,6 +107,11 @@ window.addEventListener('load', function () {
             playerScore = 0;
             computerScore = 0;
         }
+    }
+
+    function setSelectionImg(playerSelection, computerSelection) {
+        document.querySelector('.player-selection').src = `./images/${playerSelection}.png`;
+        document.querySelector('.computer-selection').src = `./images/${computerSelection}.png`;
     }
 
     game();
