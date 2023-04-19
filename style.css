@@ -67,23 +67,40 @@ footer {
     flex: 1;
 }
 
+.game-info {
+    margin-top: 48px;
+}
+
 .game-score {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    flex: 1 1 256px;
     gap: 96px;
 }
 
 .game-options {
     display: flex;
-    gap: 48px;
+    gap: 64px;
+    margin: 24px;
 }
 
 img.selections {
     height: auto;
-    width: 100px;
+    width: 100px;  
 } 
+
+.game-options button {
+    background-color: #a8dadc38;
+    border: 1px solid #1d355727;
+    border-radius: 8px;
+    padding: 24px;
+}
+
+.game-options button:hover {
+    background-color: #a8dadc94;
+}
 
 img.player-selection, img.computer-selection {
     height: auto;
